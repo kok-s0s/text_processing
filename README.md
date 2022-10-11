@@ -1,9 +1,17 @@
 # Text Processing
 
+## Python
+
 **must be python3**
 
-## All relevant cases
+### Package
 
-> Sensitive information will be deleted
+- pylint
+- black
+- os
+- xlwt
+- csv
 
-[Multitext processing to convert to xls file](./handle.py)
+### Google Python Style Guide
+
+[styleguide | Style guides for Google-originated open-source projects](https://google.github.io/styleguide/pyguide.html)
