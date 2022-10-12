@@ -159,4 +159,3 @@ if __name__ == "__main__":
 
     print("wf_data_files_count: " + str(wf_data_files_count))
     print("xy_data_files_count: " + str(xy_data_files_count))
-    print()

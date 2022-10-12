@@ -19,6 +19,7 @@ def delete_temp_files() -> None:
 
 
 def merge_csv_files() -> str:
+    global sum_the_same_params_files
     global the_same_params_files
 
     try:
@@ -45,7 +46,8 @@ def merge_csv_files() -> str:
                         for row in cur_prefix_file_reader:
                             one_file_writer.writerow(row)
 
-                print(cur_params_file)
+                # print(cur_params_file)
+                sum_the_same_params_files = sum_the_same_params_files + 1
 
     except BaseException as msg:
         print("新建目录失败：" + str(msg))
@@ -60,7 +62,7 @@ def bfs_handle_dir(cur_dir: str) -> None:
         if cur_dir_item[-3:] == save_file_type and (
             cur_dir_item[0:2] == "WF" or cur_dir_item[0:2] == "XY"
         ):
-            global sum_files
+            global sum_diff_prefix_files
             global the_same_params_files
 
             cur_params: str = cur_dir_item[3:-4]
@@ -73,7 +75,7 @@ def bfs_handle_dir(cur_dir: str) -> None:
             temp_set.add(cur_path_name)
 
             the_same_params_files.update({cur_params: temp_set})
-            sum_files = sum_files + 1
+            sum_diff_prefix_files = sum_diff_prefix_files + 1
 
         elif os.path.isdir(cur_path_name):
             bfs_handle_dir(cur_path_name)
@@ -84,12 +86,20 @@ if __name__ == "__main__":
     save_file_type: str = sys.argv[2]
     directory_name: str = sys.argv[3]
 
-    sum_files: int = 0
+    sum_diff_prefix_files: int = 0
+    sum_the_same_params_files: int = 0
     the_same_params_files: dict[str, set[str]] = {}
 
     bfs_handle_dir(full_dir)
 
     print(merge_csv_files())
-    print("sum_files: " + str(sum_files))
+    print(
+        "sum_diff_prefix_files: "
+        + str(sum_diff_prefix_files)
+        + " --> "
+        + "sum_the_same_params_files: "
+        + str(sum_the_same_params_files)
+        + "\n"
+    )
 
     delete_temp_files()
