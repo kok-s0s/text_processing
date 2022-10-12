@@ -1,10 +1,6 @@
 """
 文本数据处理脚本
 
-目标文件格式为 csv
-
-前缀不一致，但参数后缀一致的数据存储到同一个目标文件里
-
 指定数据：
 1. WF_*.aim 文件
   [Waveform Data] 声波波形数据
@@ -28,6 +24,7 @@
 """
 
 import os
+import sys
 import xlwt
 import csv
 
@@ -40,11 +37,8 @@ def str_to_key_value(str_item: str) -> dict[str, str]:
 def save_data_to_xls(cur_file_name: str, cur_thin_data: list[dict[str, str]]) -> str:
     workbook: xlwt.Workbook = xlwt.Workbook(encoding="ascii")
     worksheet = workbook.add_sheet("Waveform Data")
-    worksheet.write_merge(0, 0, 0, 1, "Waveform Data")
-    worksheet.write(1, 0, "key")
-    worksheet.write(1, 1, "value")
 
-    row_index: int = 2
+    row_index: int = 0
     col_index: int = 0
     for cur_thin_group in cur_thin_data:
         for cur_thin_item_key, cur_thin_item_value in cur_thin_group.items():
@@ -83,6 +77,7 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
 
                 if temp_item == "[Waveform Data]":
                     cur_step = 1
+                    cur_thin_data.append({"WF_DATA": "[Waveform Data]"})
                     continue
                 if cur_step == 1:
                     if temp_item != "":
@@ -96,9 +91,10 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
                     else:
                         cur_step = 2
                 if temp_item == "[Calculations]" and cur_step == 2:
-                    cur_thin_data.append(temp_arr)
-                    temp_arr = {}
                     cur_step = 3
+                    cur_thin_data.append(temp_arr)
+                    cur_thin_data.append({"WF_DATA": "[Calculations]"})
+                    temp_arr = {}
                     continue
                 if cur_step == 3:
                     if temp_item != "":
@@ -116,6 +112,7 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
 
                 if temp_item == "[Calculations]":
                     cur_step = 1
+                    cur_thin_data.append({"XY_DATA": "[Calculations]"})
                     continue
                 if cur_step == 1:
                     if temp_item != "":
@@ -139,11 +136,11 @@ def bfs_dir(cur_dir: str) -> None:
     for cur_dir_item in os.listdir(cur_dir):
         cur_path_name: str = cur_dir + "/" + cur_dir_item
 
-        if cur_dir_item[-4:] == ".aim" and cur_dir_item[0:2] == "WF":
+        if cur_dir_item[-3:] == "aim" and cur_dir_item[0:2] == "WF":
             print(signle_file_handle(cur_path_name, "WF"))
             global wf_data_files_count
             wf_data_files_count = wf_data_files_count + 1
-        elif cur_dir_item[-4:] == ".aim" and cur_dir_item[0:2] == "XY":
+        elif cur_dir_item[-3:] == "aim" and cur_dir_item[0:2] == "XY":
             print(signle_file_handle(cur_path_name, "XY"))
             global xy_data_files_count
             xy_data_files_count = xy_data_files_count + 1
@@ -152,8 +149,8 @@ def bfs_dir(cur_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    full_dir: str = "/Users/kok-s0s/Github__Files/text_processing/947w_AEC_Auto"
-    save_file_type: str = "csv"
+    full_dir: str = sys.argv[1]
+    save_file_type: str = sys.argv[2]
 
     wf_data_files_count: int = 0
     xy_data_files_count: int = 0
@@ -162,3 +159,4 @@ if __name__ == "__main__":
 
     print("wf_data_files_count: " + str(wf_data_files_count))
     print("xy_data_files_count: " + str(xy_data_files_count))
+    print()
