@@ -9,6 +9,9 @@
 - pylint
 - black
 - os
+- shutil
+- sys
+- time
 - xlwt
 - csv
 
