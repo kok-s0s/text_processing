@@ -23,15 +23,15 @@ def merge_csv_files() -> str:
     global the_same_params_files
 
     try:
-        file_path: str = os.getcwd() + "\\" + directory_name
+        dir_path: str = os.getcwd() + "/" + directory_name
 
-        if os.path.exists(file_path):
-            shutil.rmtree(file_path)
+        if os.path.exists(dir_path):
+            shutil.rmtree(dir_path)
 
-        os.mkdir(file_path)
+        os.mkdir(dir_path)
 
         for cur_params, cur_params_files in the_same_params_files.items():
-            cur_params_file: str = file_path + "\\" + cur_params + ".csv"
+            cur_params_file: str = dir_path + "/" + cur_params + ".csv"
             with open(
                 cur_params_file, mode="w", newline="", encoding="ascii"
             ) as one_file:
