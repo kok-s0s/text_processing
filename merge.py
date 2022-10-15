@@ -55,7 +55,7 @@ def merge_csv_files() -> str:
     return "\n全部合并成功"
 
 
-def bfs_handle_dir(cur_dir: str) -> None:
+def dfs_handle_dir(cur_dir: str) -> None:
     for cur_dir_item in os.listdir(cur_dir):
         cur_path_name: str = cur_dir + "/" + cur_dir_item
 
@@ -78,7 +78,7 @@ def bfs_handle_dir(cur_dir: str) -> None:
             sum_diff_prefix_files = sum_diff_prefix_files + 1
 
         elif os.path.isdir(cur_path_name):
-            bfs_handle_dir(cur_path_name)
+            dfs_handle_dir(cur_path_name)
 
 
 if __name__ == "__main__":
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     sum_the_same_params_files: int = 0
     the_same_params_files: dict[str, set[str]] = {}
 
-    bfs_handle_dir(full_dir)
+    dfs_handle_dir(full_dir)
 
     print(merge_csv_files())
     print(

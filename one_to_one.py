@@ -65,7 +65,7 @@ def save_data_to_csv(cur_file_name: str, cur_thin_data: list[dict[str, str]]) ->
 
 def signle_file_handle(cur_file_name: str, prefix: str) -> str:
     cur_thin_data: list[dict[str, str]] = []
-    temp_arr: dict[str, str] = {}
+    temp_dict: dict[str, str] = {}
 
     if prefix == "WF":
         cur_waveform_data_index: int = 0
@@ -82,27 +82,27 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
                 if cur_step == 1:
                     if temp_item != "":
                         if int(temp_item[0]) == cur_waveform_data_index:
-                            temp_arr.update(str_to_key_value(temp_item))
+                            temp_dict.update(str_to_key_value(temp_item))
                         else:
-                            cur_thin_data.append(temp_arr)
-                            temp_arr = {}
-                            temp_arr.update(str_to_key_value(temp_item))
+                            cur_thin_data.append(temp_dict)
+                            temp_dict = {}
+                            temp_dict.update(str_to_key_value(temp_item))
                             cur_waveform_data_index = cur_waveform_data_index + 1
                     else:
                         cur_step = 2
                 if temp_item == "[Calculations]" and cur_step == 2:
                     cur_step = 3
-                    cur_thin_data.append(temp_arr)
+                    cur_thin_data.append(temp_dict)
                     cur_thin_data.append({"WF_DATA": "[Calculations]"})
-                    temp_arr = {}
+                    temp_dict = {}
                     continue
                 if cur_step == 3:
                     if temp_item != "":
-                        temp_arr.update(str_to_key_value(temp_item))
+                        temp_dict.update(str_to_key_value(temp_item))
                     else:
                         cur_step = 4
 
-            cur_thin_data.append(temp_arr)
+            cur_thin_data.append(temp_dict)
     elif prefix == "XY":
         cur_step: int = 0  # 0: base, 1: cad_start, 2: cad_end
 
@@ -116,11 +116,11 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
                     continue
                 if cur_step == 1:
                     if temp_item != "":
-                        temp_arr.update(str_to_key_value(temp_item))
+                        temp_dict.update(str_to_key_value(temp_item))
                     else:
                         cur_step = 2
 
-            cur_thin_data.append(temp_arr)
+            cur_thin_data.append(temp_dict)
 
     if len(cur_thin_data) != 0:
         return (
@@ -132,7 +132,7 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
         return "没有找到任何相关数据"
 
 
-def bfs_dir(cur_dir: str) -> None:
+def dfs_dir(cur_dir: str) -> None:
     for cur_dir_item in os.listdir(cur_dir):
         cur_path_name: str = cur_dir + "/" + cur_dir_item
 
@@ -145,7 +145,7 @@ def bfs_dir(cur_dir: str) -> None:
             global xy_data_files_count
             xy_data_files_count = xy_data_files_count + 1
         elif os.path.isdir(cur_path_name):
-            bfs_dir(cur_path_name)
+            dfs_dir(cur_path_name)
 
 
 if __name__ == "__main__":
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     wf_data_files_count: int = 0
     xy_data_files_count: int = 0
 
-    bfs_dir(full_dir)
+    dfs_dir(full_dir)
 
     print("wf_data_files_count: " + str(wf_data_files_count))
     print("xy_data_files_count: " + str(xy_data_files_count))
