@@ -4,7 +4,12 @@
 
 **must be python3**
 
-### Package
+### 开发环境
+
+- VSCode
+- python3 编译器
+
+### Package 包
 
 - pylint
 - black
@@ -28,3 +33,19 @@
 ### 解决思路
 
 可参看我所画的[图](./handle.drawio)，需要在 VSCode 下安装 `Draw.io Integration` 插件才能打开。
+
+## 如何使用
+
+可直接在终端环境下用 python 编译器直接输入以下命令来运行脚本（Windows 环境）
+
+```python
+python all_processes.py
+```
+
+注意使用 WSL （Windows Subsystem for Linux）或者 macOS 时，所使用的 python 编译器是以下指令
+
+```python
+python3 all_processes.py
+```
+
+仅仅是 python 编译器的别名不同罢了
