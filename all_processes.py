@@ -10,9 +10,7 @@ import os
 import time
 
 if __name__ == "__main__":
-    full_dir: str = (
-        "C:/Users/Administrator/Documents/GitHub/text_processing/947w_AEC_Auto"
-    )
+    full_dir: str = "D:/work/text_processing_wok/947W"
     save_file_type: str = "csv"
     directory_name: str = "target_data_csv"
 

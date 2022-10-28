@@ -29,9 +29,9 @@ import xlwt
 import csv
 
 
-def str_to_key_value(str_item: str) -> dict[str, str]:
+def str_to_key_value(str_item: str) -> list[str]:
     [key, value] = str_item.split("\t")
-    return {key: value}
+    return [key, value]
 
 
 def save_data_to_xls(cur_file_name: str, cur_thin_data: list[dict[str, str]]) -> str:
@@ -68,42 +68,6 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
     temp_dict: dict[str, str] = {}
 
     if prefix == "WF":
-        cur_waveform_data_index: int = 0
-        cur_step: int = 0  # 0: base, 1: wfd_start, 2: wfd_end, 3: cad_start, 4: cad_end
-
-        with open(cur_file_name, mode="r", encoding="utf-8") as file:
-            for line in file:
-                temp_item: str = line.strip()
-
-                if temp_item == "[Waveform Data]":
-                    cur_step = 1
-                    cur_thin_data.append({"WF_DATA": "[Waveform Data]"})
-                    continue
-                if cur_step == 1:
-                    if temp_item != "":
-                        if int(temp_item[0]) == cur_waveform_data_index:
-                            temp_dict.update(str_to_key_value(temp_item))
-                        else:
-                            cur_thin_data.append(temp_dict)
-                            temp_dict = {}
-                            temp_dict.update(str_to_key_value(temp_item))
-                            cur_waveform_data_index = cur_waveform_data_index + 1
-                    else:
-                        cur_step = 2
-                if temp_item == "[Calculations]" and cur_step == 2:
-                    cur_step = 3
-                    cur_thin_data.append(temp_dict)
-                    cur_thin_data.append({"WF_DATA": "[Calculations]"})
-                    temp_dict = {}
-                    continue
-                if cur_step == 3:
-                    if temp_item != "":
-                        temp_dict.update(str_to_key_value(temp_item))
-                    else:
-                        cur_step = 4
-
-            cur_thin_data.append(temp_dict)
-    elif prefix == "XY":
         cur_step: int = 0  # 0: base, 1: cad_start, 2: cad_end
 
         with open(cur_file_name, mode="r", encoding="utf-8") as file:
@@ -112,13 +76,59 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
 
                 if temp_item == "[Calculations]":
                     cur_step = 1
-                    cur_thin_data.append({"XY_DATA": "[Calculations]"})
+                    # cur_thin_data.append({"WF_DATA": "[Calculations]"})
                     continue
                 if cur_step == 1:
                     if temp_item != "":
-                        temp_dict.update(str_to_key_value(temp_item))
+                        [key, value] = str_to_key_value(temp_item)
+                        if key == "Z Distance":
+                            temp_dict.update({"ZPii3Max Zsns": value})
+                        elif key == "Mechanical Index":
+                            temp_dict.update({"Mi": value})
+                        elif key == "Center Freq":
+                            temp_dict.update({"Fc": value})
+                        elif key == "Pulse Duration":
+                            temp_dict.update({"Pd": value})
                     else:
                         cur_step = 2
+
+            cur_thin_data.append(temp_dict)
+    elif prefix == "XY":
+        cur_step: int = (
+            0  # 0: base, 1: scand_start, 2: scand_end, 3: cad_start, 4: cad_end
+        )
+        scan_database: list[list[str]] = [[]]
+
+        with open(cur_file_name, mode="r", encoding="utf-8") as file:
+            for line in file:
+                temp_item: str = line.strip()
+
+                if temp_item == "[XY Scan Data 0]":
+                    cur_step = 1
+                    # cur_thin_data.append({"XY_DATA": "[XY Scan Data 0]"})
+                    continue
+                if cur_step == 1:
+                    if temp_item != "":
+                        scan_database.append(temp_item.split("\t"))
+                    else:
+                        cur_step = 2
+                        temp_dict.update({"Pii3": scan_database[17][15]})
+
+                if temp_item == "[Calculations]":
+                    cur_step = 3
+                    cur_thin_data.append(temp_dict)
+                    # cur_thin_data.append({"XY_DATA": "[Calculations]"})
+                    temp_dict = {}
+                    continue
+                if cur_step == 3:
+                    if temp_item != "":
+                        [key, value] = str_to_key_value(temp_item)
+                        if key == "-6 dB Width 1":
+                            temp_dict.update({"BeamWidthX": value})
+                        elif key == "Power":
+                            temp_dict.update({"Power": value})
+                    else:
+                        cur_step = 4
 
             cur_thin_data.append(temp_dict)
 
@@ -151,6 +161,8 @@ def dfs_dir(cur_dir: str) -> None:
 if __name__ == "__main__":
     full_dir: str = sys.argv[1]
     save_file_type: str = sys.argv[2]
+    # full_dir: str = "D:/work/text_processing_wok/947w_AEC_Auto"
+    # save_file_type: str = "csv"
 
     wf_data_files_count: int = 0
     xy_data_files_count: int = 0
