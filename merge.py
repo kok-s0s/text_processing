@@ -60,12 +60,19 @@ def dfs_handle_dir(cur_dir: str) -> None:
         cur_path_name: str = cur_dir + "/" + cur_dir_item
 
         if cur_dir_item[-3:] == save_file_type and (
-            cur_dir_item[0:2] == "WF" or cur_dir_item[0:2] == "XY"
+            cur_dir_item[0:2] == "WF"
+            or cur_dir_item[0:2] == "XY"
+            or cur_dir_item[0:1] == "Z"
         ):
             global sum_diff_prefix_files
             global the_same_params_files
 
-            cur_params: str = cur_dir_item[3:-4]
+            cur_params: str = ""
+            if cur_dir_item[0:2] == "WF" or cur_dir_item[0:2] == "XY":
+                cur_params = cur_dir_item[3:-4]
+            elif cur_dir_item[0:1] == "Z":
+                cur_params = cur_dir_item[2:-4]
+
             temp_set: set[str] = set()
 
             for params in the_same_params_files.keys():
@@ -82,9 +89,12 @@ def dfs_handle_dir(cur_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    full_dir: str = sys.argv[1]
-    save_file_type: str = sys.argv[2]
-    directory_name: str = sys.argv[3]
+    # full_dir: str = sys.argv[1]
+    # save_file_type: str = sys.argv[2]
+    # directory_name: str = sys.argv[3]
+    full_dir: str = "D:/work/text_processing_wok/221114-975S"
+    save_file_type: str = "csv"
+    directory_name: str = "target_data_csv"
 
     sum_diff_prefix_files: int = 0
     sum_the_same_params_files: int = 0
@@ -102,4 +112,4 @@ if __name__ == "__main__":
         + "\n"
     )
 
-    delete_temp_files()
+    # delete_temp_files()

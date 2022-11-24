@@ -10,7 +10,7 @@ import os
 import time
 
 if __name__ == "__main__":
-    full_dir: str = "D:/work/text_processing_wok/947W"
+    full_dir: str = "D:/work/text_processing_wok/221114-975S"
     save_file_type: str = "csv"
     directory_name: str = "target_data_csv"
 
