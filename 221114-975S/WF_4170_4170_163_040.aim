@@ -1,0 +1,411 @@
+[AIMS Version]
+Number	4.2.54.0
+Serial Number	0075
+AIMS.exe CRC32	0138CFC7
+
+[File Info]
+Date
+
+[User]
+Name	LJC
+
+[Comments]
+0
+
+[Transducer]
+Model	V6LC
+Serial	834W-192028R
+System Model	Apogee 6800
+System Serial	207012190010R
+System Software Rev.	5.0.0
+Frequency	4.99604 MHz
+PRF	400 Hz
+Power	0.3064 mW
+Bounded Power	41.8 mW
+Mode	M
+Scanned	FALSE
+Xdim	0.236
+YDim	0.6
+Circular	FALSE
+TPWidth	0.236
+FLX	0.24
+FLY	0.4
+Curved	FALSE
+Sector Scanner	TRUE
+Radius	0
+Line Spacing	0
+Diameter	1
+Line Angle	0.273
+Line Count	70
+Frame Rate	82
+Zbp	0.635943205011265
+
+[Hydrophone]
+Model	HMB-0200
+Serial Number	1134
+Preamp Model	integral
+Preamp Serial Number	n/a
+Inverted	FALSE
+Calibration File Name	HMB-0200+.xls
+Sensitivity
+1	0.159
+2	0.1464
+3	0.1529
+4	0.1544
+5	0.1554
+6	0.1541
+7	0.1552
+8	0.1552
+9	0.157
+10	0.1562
+11	0.1546
+12	0.1514
+13	0.1524
+14	0.1506
+15	0.1513
+16	0.1535
+17	0.1532
+18	0.1539
+19	0.1554
+20	0.1565
+
+[Medium]
+FTemperature	25
+FVelocity	1496.71
+
+[Orientation]
+Round Trip	FALSE
+X Axis	0
+Y Axis	1
+Beam Axis	2
+Azimuthal Axis	3
+Elevational Axis	4
+
+[Distance Tracking]
+Enabled	TRUE
+Delay Offset	18.25
+Use Diagonal	FALSE
+
+[Oscilloscope]
+Manufacturer	Agilent
+Model	DSO5012A
+Serial	MY48510621
+CH1 VperDiv	0.1
+CH1 Coupling	1
+CH1 Offset	0
+CH1 Probe	1
+CH1 Inverted	FALSE
+CH1 BWLimited	FALSE
+CH2 VperDiv	50
+CH2 Coupling	3
+CH2 Offset	125
+CH2 Probe	10
+CH2 Inverted	FALSE
+CH2 BWLimited	FALSE
+SecPerDiv	5E-7
+Delay	5.065432E-5
+Averages	64
+Use Correlation	FALSE
+Points	100
+TriggerSource	2
+TriggerMode	0
+TriggerSlope	FALSE
+TriggerCoupling	1
+TriggerLevel	15.625
+RemoteAveraging	TRUE
+ShowWFWindow	TRUE
+WFSource	1
+Reference	0
+DigitizeNew	TRUE
+
+[Positioner Config]
+Type	PositionerSettings
+Board Number	0
+
+[Positioner]
+Axis 0 Name	Left/Right
+Axis 0 Linear	TRUE
+Axis 0 Units	mm
+Axis 0 StepsPerMeterOrRev	90230
+Axis 0 Scale Factor	1000
+Axis 0 Position	0
+Axis 0 Low Limit	-181
+Axis 0 High Limit	100
+Axis 0 Increment	0.5
+Axis 0 Overshoot	1
+Axis 0 Reversed	FALSE
+Axis 0 Limit Switches Reversed	FALSE
+Axis 0 Ignore Limit Switches	FALSE
+Axis 0 StepsPerSecond	1000
+Axis 0 MinStepsPerSecond	500
+Axis 0 RampSteps	40
+Axis 0 Axis to Track	-1
+Axis 1 Name	Front/Back
+Axis 1 Linear	TRUE
+Axis 1 Units	mm
+Axis 1 StepsPerMeterOrRev	90230
+Axis 1 Scale Factor	1000
+Axis 1 Position	0
+Axis 1 Low Limit	-100
+Axis 1 High Limit	100
+Axis 1 Increment	1
+Axis 1 Overshoot	1
+Axis 1 Reversed	FALSE
+Axis 1 Limit Switches Reversed	FALSE
+Axis 1 Ignore Limit Switches	FALSE
+Axis 1 StepsPerSecond	1000
+Axis 1 MinStepsPerSecond	500
+Axis 1 RampSteps	40
+Axis 1 Axis to Track	-1
+Axis 2 Name	Up/Down
+Axis 2 Linear	TRUE
+Axis 2 Units	mm
+Axis 2 StepsPerMeterOrRev	90230
+Axis 2 Scale Factor	1000
+Axis 2 Position	48.5
+Axis 2 Low Limit	4.9
+Axis 2 High Limit	281
+Axis 2 Increment	1
+Axis 2 Overshoot	1
+Axis 2 Reversed	FALSE
+Axis 2 Limit Switches Reversed	FALSE
+Axis 2 Ignore Limit Switches	FALSE
+Axis 2 StepsPerSecond	500
+Axis 2 MinStepsPerSecond	500
+Axis 2 RampSteps	40
+Axis 2 Axis to Track	-1
+Axis 3 Name	Ang. Arm
+Axis 3 Linear	FALSE
+Axis 3 Units	deg.
+Axis 3 StepsPerMeterOrRev	7200
+Axis 3 Scale Factor	360
+Axis 3 Position	0.65
+Axis 3 Low Limit	-45
+Axis 3 High Limit	45
+Axis 3 Increment	0.1
+Axis 3 Overshoot	1
+Axis 3 Reversed	FALSE
+Axis 3 Limit Switches Reversed	FALSE
+Axis 3 Ignore Limit Switches	FALSE
+Axis 3 StepsPerSecond	200
+Axis 3 MinStepsPerSecond	160
+Axis 3 RampSteps	40
+Axis 3 Axis to Track	-1
+Axis 4 Name	Ang. Turntable
+Axis 4 Linear	FALSE
+Axis 4 Units	deg.
+Axis 4 StepsPerMeterOrRev	7200
+Axis 4 Scale Factor	360
+Axis 4 Position	1.3
+Axis 4 Low Limit	-45
+Axis 4 High Limit	45
+Axis 4 Increment	0.1
+Axis 4 Overshoot	1
+Axis 4 Reversed	FALSE
+Axis 4 Limit Switches Reversed	FALSE
+Axis 4 Ignore Limit Switches	FALSE
+Axis 4 StepsPerSecond	200
+Axis 4 MinStepsPerSecond	160
+Axis 4 RampSteps	40
+Axis 4 Axis to Track	3
+Axis 5 Name	Unused
+Axis 5 Linear	TRUE
+Axis 5 Units	mm
+Axis 5 StepsPerMeterOrRev	90230
+Axis 5 Scale Factor	1000
+Axis 5 Position	0
+Axis 5 Low Limit	-100
+Axis 5 High Limit	100
+Axis 5 Increment	1
+Axis 5 Overshoot	1
+Axis 5 Reversed	FALSE
+Axis 5 Limit Switches Reversed	FALSE
+Axis 5 Ignore Limit Switches	FALSE
+Axis 5 StepsPerSecond	1000
+Axis 5 MinStepsPerSecond	800
+Axis 5 RampSteps	40
+Axis 5 Axis to Track	-1
+Use Machine Coordinates	TRUE
+X Angle	0
+Y Angle	0
+Z Angle	0
+Angular Positioner Installed	TRUE
+Show Status Window	TRUE
+
+[Function Generator]
+Model	Simulated
+Frequency	1000000
+VoltsPeakToPeak	0
+Offset	0
+Function	0
+BurstCount	1
+Mode	0
+PRF	0.001
+Enabled	FALSE
+
+[Water Conditioner]
+Temperature	0
+TempOffset	0
+FirmwareVersion	(none)
+Flow	0
+MaxRecentFlow	0
+TempSetPoint	10
+HeaterEnabled	FALSE
+PumpEnabled	FALSE
+DeGasserEnabled	FALSE
+OnTime	1
+OffTime	1
+UseDutyCycleControl	FALSE
+DisableWhenAcquiringData	TRUE
+
+[Waveform]
+Auto Scale	TRUE
+View Mode	2048
+Selected	0
+View Derated	TRUE
+Scale Mode	dB re Peak
+Use Function Generator	FALSE
+After Scan	GoBack
+Pause	0
+Elapsed Time	00:00:00
+Record Waveforms	FALSE
+Parameter 0	Bandwidth 6 dB	0.670107   	MHz
+Parameter 1	Center Frequency 6 dB	4.97239    	MHz
+Parameter 2	Pulse Duration	1.90635    	us
+Parameter 3	Peak to Peak Voltage	0.45       	V
+Date	2022/11/19 14:08:25
+X Scale Mode	Linear
+XUnits	0.5
+YUnits	0.1
+YOffset	0
+Save Fc	FALSE
+Spectrum X Max	12
+XCount	100
+XMin	0
+XMax	4.95
+XIncrement	0.05
+XScaling	Linear
+
+[Waveform Data]
+0	0
+0.05	0
+0.1	0
+0.15	0
+0.2	0
+0.25	0
+0.3	0
+0.35	-0.003125
+0.4	-0.034375
+0.45	-0.05625
+0.5	0.190625
+0.55	0.009375
+0.6	-0.071875
+0.65	-0.046875
+0.7	0.034375
+0.75	0.01875
+0.8	0.009375
+0.85	0
+0.9	0.165625
+0.95	-0.015625
+1	-0.1375
+1.05	-0.175
+1.1	0.1125
+1.15	0.0875
+1.2	-0.015625
+1.25	-0.021875
+1.3	-0.015625
+1.35	0
+1.4	-0.021875
+1.45	-0.096875
+1.5	0.275
+1.55	0.053125
+1.6	-0.078125
+1.65	-0.096875
+1.7	0.053125
+1.75	0.04375
+1.8	0.028125
+1.85	0
+1.9	0.040625
+1.95	0.009375
+2	-0.09375
+2.05	-0.090625
+2.1	0.15
+2.15	0.015625
+2.2	-0.01875
+2.25	-0.00625
+2.3	-0.009375
+2.35	0.003125
+2.4	0.0125
+2.45	-0.00625
+2.5	-0.00625
+2.55	0
+2.6	0
+2.65	0
+2.7	0
+2.75	0
+2.8	0
+2.85	0
+2.9	0
+2.95	0
+3	0
+3.05	0
+3.1	0
+3.15	0
+3.2	0
+3.25	0
+3.3	0
+3.35	0
+3.4	0
+3.45	0
+3.5	0
+3.55	0
+3.6	0
+3.65	0
+3.7	0
+3.75	0
+3.8	0
+3.85	0
+3.9	0
+3.95	0
+4	0
+4.05	0
+4.1	0
+4.15	0
+4.2	0
+4.25	0
+4.3	0
+4.35	0
+4.4	0
+4.45	0
+4.5	0
+4.55	0
+4.6	0
+4.65	0
+4.7	0
+4.75	0
+4.8	0
+4.85	0
+4.9	0
+4.95	0
+
+[Calculations]
+Z Distance	48.5
+Temperature	25
+Pulse Average	21.680129298921
+Pulse Average (Derated)	4.06572899602788
+Temporal Average	16.5319779648749
+Temporal Average (Derated)	3.10028327076588
+Temporal Peak	208.782574440063
+Temporal Peak (Derated)	39.153519569118
+Pulse Duration	1.90635140327527
+Peak Negative Pressure	1.12615484238924
+Peak Negative Pressure (Derated)	0.487681620190791
+Peak Positive Pressure	1.7696718951831
+Peak Positive Pressure (Derated)	0.766356831728386
+Mechanical Index	0.218184325800796
+Center Freq	4.97469270232302
+Lower -3 dB Freq	4.73188834244643
+Upper -3 dB Freq	5.21749706219961
+Bandwidth	0.485608719753178
+Bandwidth Percent	9.76158224861638
+
