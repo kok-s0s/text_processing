@@ -10,7 +10,7 @@ import configparser
 
 def for_handle_list(cur_dir: str) -> None:
     pro_dir: str = os.path.split(os.path.realpath(__file__))[0]
-    configPath: str = os.path.join(pro_dir, "AECSoftwareParam.ini")
+    configPath: str = os.path.join(pro_dir, ini_file)
 
     conf = configparser.ConfigParser()
 
@@ -47,26 +47,6 @@ def for_handle_list(cur_dir: str) -> None:
     set_data("TxPulseTypeA", TxPulseTypeA)
 
     valuable_data_dict: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
-    # fireFreqB0A="3300,2000,5000"
-    # fireFreqB1A="3300,2000,5000"
-    # fireHvcA="013,048,081,114,141,163,178,196,214,227,242,255"
-    # focusDepthA="020,040,060,080,110,140,180,230"
-    txVoltage: list[str] = [
-        "013",
-        "048",
-        "081",
-        "114",
-        "141",
-        "163",
-        "178",
-        "196",
-        "214",
-        "227",
-        "242",
-        "255",
-    ]
-    txFocusRange: list[str] = ["020", "040", "060", "080", "110", "140", "180", "230"]
-    txFreq: list[str] = ["3300", "2000", "5000"]
 
     for voltage in txVoltage:
         temp_focusRange_dict: dict[str, dict[str, dict[str, float]]] = {}
@@ -208,7 +188,7 @@ def for_handle_list(cur_dir: str) -> None:
         temp_list_list_BeamWidthX = []
         temp_list_list_Power = []
 
-    with open("AEC.json", "w+") as jsonFile:
+    with open(save_name, "w+") as jsonFile:
         jsonFile.write(
             json.dumps(
                 {
@@ -236,5 +216,65 @@ def for_handle_list(cur_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    directory_name: str = "valuable_data_files"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv")
+    # 凸阵探头
+    txVoltage: list[str] = [
+        "013",
+        "048",
+        "081",
+        "114",
+        "141",
+        "163",
+        "178",
+        "196",
+        "214",
+        "227",
+        "242",
+        "255",
+    ]
+    txFocusRange: list[str] = ["020", "040", "060", "080", "110", "140", "180", "230"]
+    txFreq: list[str] = ["3300", "2000", "5000"]
+    ini_file: str = "AECSoftwareParam_tuzhen.ini"
+    save_name: str = "AEC_tuzhen.json"
+    for_handle_list("D:/work/text_processing_wok/target_data_csv_947W")
+
+    # 微凸探头
+    txVoltage: list[str] = [
+        "013",
+        "048",
+        "081",
+        "114",
+        "141",
+        "163",
+        "178",
+        "196",
+        "214",
+        "227",
+        "242",
+        "255",
+    ]
+    txFocusRange: list[str] = ["010", "020", "030", "040", "050", "070", "090", "120"]
+    txFreq: list[str] = ["3500", "3840", "4170"]
+    ini_file: str = "AECSoftwareParam_weitu.ini"
+    save_name: str = "AEC_weitu.json"
+    for_handle_list("D:/work/text_processing_wok/target_data_csv_975S")
+
+    # 线阵探头
+    txVoltage: list[str] = [
+        "013",
+        "048",
+        "081",
+        "114",
+        "141",
+        "163",
+        "178",
+        "196",
+        "214",
+        "227",
+        "242",
+        "255",
+    ]
+    txFocusRange: list[str] = ["010", "016", "025", "035", "045", "060", "080"]
+    txFreq: list[str] = ["4500", "5000", "5800"]
+    ini_file: str = "AECSoftwareParam_xianzhen.ini"
+    save_name: str = "AEC_xianzhen.json"
+    for_handle_list("D:/work/text_processing_wok/target_data_csv_932W")

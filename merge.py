@@ -89,12 +89,9 @@ def dfs_handle_dir(cur_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    # full_dir: str = sys.argv[1]
-    # save_file_type: str = sys.argv[2]
-    # directory_name: str = sys.argv[3]
-    full_dir: str = "D:/work/text_processing_wok/221114-975S"
-    save_file_type: str = "csv"
-    directory_name: str = "target_data_csv"
+    full_dir: str = sys.argv[1]
+    save_file_type: str = sys.argv[2]
+    directory_name: str = sys.argv[3]
 
     sum_diff_prefix_files: int = 0
     sum_the_same_params_files: int = 0
