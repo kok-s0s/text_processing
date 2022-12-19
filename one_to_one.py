@@ -115,7 +115,11 @@ def signle_file_handle(cur_file_name: str, prefix: str) -> str:
                         scan_database.append(temp_item.split("\t"))
                     else:
                         cur_step = 2
-                        temp_dict.update({"Pii3": scan_database[17][15]})
+                        scan_database = scan_database[1:]
+                        scan_database[0].insert(0, "flag")
+                        tempX: int = int(len(scan_database) / 2)
+                        tempY: int = int(len(scan_database[0]) / 2)
+                        temp_dict.update({"Pii3": scan_database[tempX][tempY]})
 
                 if temp_item == "[Calculations]":
                     cur_step = 3
