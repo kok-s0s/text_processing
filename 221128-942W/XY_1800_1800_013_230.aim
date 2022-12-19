@@ -1,0 +1,335 @@
+[AIMS Version]
+Number	4.2.54.0
+Serial Number	0075
+AIMS.exe CRC32	0138CFC7
+
+[File Info]
+Date
+
+[User]
+Name	LJC
+
+[Comments]
+0
+
+[Transducer]
+Model	C3LC
+Serial	T942N
+System Model	Apogee 6800
+System Serial
+System Software Rev.	4.05B
+Frequency	2.99355 MHz
+PRF	400 Hz
+Power	0.3064 mW
+Bounded Power	41.8 mW
+Mode	M
+Scanned	FALSE
+Xdim	1.4
+YDim	1.32
+Circular	FALSE
+TPWidth	1.4
+FLX	0.24
+FLY	0.4
+Curved	FALSE
+Sector Scanner	TRUE
+Radius	0
+Line Spacing	0
+Diameter	1
+Line Angle	0.273
+Line Count	70
+Frame Rate	82
+Zbp	2.29740566726906
+
+[Hydrophone]
+Model	HMB-0200
+Serial Number	1134
+Preamp Model	integral
+Preamp Serial Number	n/a
+Inverted	FALSE
+Calibration File Name	HMB-0200+.xls
+Sensitivity
+1	0.159
+2	0.1464
+3	0.1529
+4	0.1544
+5	0.1554
+6	0.1541
+7	0.1552
+8	0.1552
+9	0.157
+10	0.1562
+11	0.1546
+12	0.1514
+13	0.1524
+14	0.1506
+15	0.1513
+16	0.1535
+17	0.1532
+18	0.1539
+19	0.1554
+20	0.1565
+
+[Medium]
+FTemperature	25
+FVelocity	1496.71
+
+[Orientation]
+Round Trip	FALSE
+X Axis	0
+Y Axis	1
+Beam Axis	2
+Azimuthal Axis	3
+Elevational Axis	4
+
+[Distance Tracking]
+Enabled	TRUE
+Delay Offset	11.767
+Use Diagonal	FALSE
+
+[Oscilloscope]
+Manufacturer	Agilent
+Model	DSO5012A
+Serial	MY48510621
+CH1 VperDiv	0.005
+CH1 Coupling	1
+CH1 Offset	0
+CH1 Probe	1
+CH1 Inverted	FALSE
+CH1 BWLimited	FALSE
+CH2 VperDiv	50
+CH2 Coupling	3
+CH2 Offset	0
+CH2 Probe	10
+CH2 Inverted	FALSE
+CH2 BWLimited	FALSE
+SecPerDiv	1E-6
+Delay	9.561738E-5
+Averages	8
+Use Correlation	FALSE
+Points	1000
+TriggerSource	2
+TriggerMode	0
+TriggerSlope	FALSE
+TriggerCoupling	1
+TriggerLevel	4.875
+RemoteAveraging	TRUE
+ShowWFWindow	TRUE
+WFSource	1
+Reference	0
+DigitizeNew	TRUE
+
+[Positioner Config]
+Type	PositionerSettings
+Board Number	0
+
+[Positioner]
+Axis 0 Name	Left/Right
+Axis 0 Linear	TRUE
+Axis 0 Units	mm
+Axis 0 StepsPerMeterOrRev	90230
+Axis 0 Scale Factor	1000
+Axis 0 Position	0
+Axis 0 Low Limit	-181
+Axis 0 High Limit	100
+Axis 0 Increment	0.5
+Axis 0 Overshoot	1
+Axis 0 Reversed	FALSE
+Axis 0 Limit Switches Reversed	FALSE
+Axis 0 Ignore Limit Switches	FALSE
+Axis 0 StepsPerSecond	1000
+Axis 0 MinStepsPerSecond	500
+Axis 0 RampSteps	40
+Axis 0 Axis to Track	-1
+Axis 1 Name	Front/Back
+Axis 1 Linear	TRUE
+Axis 1 Units	mm
+Axis 1 StepsPerMeterOrRev	90230
+Axis 1 Scale Factor	1000
+Axis 1 Position	0
+Axis 1 Low Limit	-100
+Axis 1 High Limit	100
+Axis 1 Increment	1
+Axis 1 Overshoot	1
+Axis 1 Reversed	FALSE
+Axis 1 Limit Switches Reversed	FALSE
+Axis 1 Ignore Limit Switches	FALSE
+Axis 1 StepsPerSecond	1000
+Axis 1 MinStepsPerSecond	500
+Axis 1 RampSteps	40
+Axis 1 Axis to Track	-1
+Axis 2 Name	Up/Down
+Axis 2 Linear	TRUE
+Axis 2 Units	mm
+Axis 2 StepsPerMeterOrRev	90230
+Axis 2 Scale Factor	1000
+Axis 2 Position	125.5
+Axis 2 Low Limit	4.9
+Axis 2 High Limit	281
+Axis 2 Increment	1
+Axis 2 Overshoot	1
+Axis 2 Reversed	FALSE
+Axis 2 Limit Switches Reversed	FALSE
+Axis 2 Ignore Limit Switches	FALSE
+Axis 2 StepsPerSecond	500
+Axis 2 MinStepsPerSecond	500
+Axis 2 RampSteps	40
+Axis 2 Axis to Track	-1
+Axis 3 Name	Ang. Arm
+Axis 3 Linear	FALSE
+Axis 3 Units	deg.
+Axis 3 StepsPerMeterOrRev	7200
+Axis 3 Scale Factor	360
+Axis 3 Position	0
+Axis 3 Low Limit	-45
+Axis 3 High Limit	45
+Axis 3 Increment	0.1
+Axis 3 Overshoot	1
+Axis 3 Reversed	FALSE
+Axis 3 Limit Switches Reversed	FALSE
+Axis 3 Ignore Limit Switches	FALSE
+Axis 3 StepsPerSecond	200
+Axis 3 MinStepsPerSecond	160
+Axis 3 RampSteps	40
+Axis 3 Axis to Track	-1
+Axis 4 Name	Ang. Turntable
+Axis 4 Linear	FALSE
+Axis 4 Units	deg.
+Axis 4 StepsPerMeterOrRev	7200
+Axis 4 Scale Factor	360
+Axis 4 Position	0.2
+Axis 4 Low Limit	-45
+Axis 4 High Limit	45
+Axis 4 Increment	0.1
+Axis 4 Overshoot	1
+Axis 4 Reversed	FALSE
+Axis 4 Limit Switches Reversed	FALSE
+Axis 4 Ignore Limit Switches	FALSE
+Axis 4 StepsPerSecond	200
+Axis 4 MinStepsPerSecond	160
+Axis 4 RampSteps	40
+Axis 4 Axis to Track	3
+Axis 5 Name	Unused
+Axis 5 Linear	TRUE
+Axis 5 Units	mm
+Axis 5 StepsPerMeterOrRev	90230
+Axis 5 Scale Factor	1000
+Axis 5 Position	0
+Axis 5 Low Limit	-100
+Axis 5 High Limit	100
+Axis 5 Increment	1
+Axis 5 Overshoot	1
+Axis 5 Reversed	FALSE
+Axis 5 Limit Switches Reversed	FALSE
+Axis 5 Ignore Limit Switches	FALSE
+Axis 5 StepsPerSecond	1000
+Axis 5 MinStepsPerSecond	800
+Axis 5 RampSteps	40
+Axis 5 Axis to Track	-1
+Use Machine Coordinates	TRUE
+X Angle	0
+Y Angle	0
+Z Angle	0
+Angular Positioner Installed	TRUE
+Show Status Window	TRUE
+
+[Function Generator]
+Model	Simulated
+Frequency	1000000
+VoltsPeakToPeak	0
+Offset	0
+Function	0
+BurstCount	1
+Mode	0
+PRF	0.001
+Enabled	FALSE
+
+[Water Conditioner]
+Temperature	0
+TempOffset	0
+FirmwareVersion	(none)
+Flow	0
+MaxRecentFlow	0
+TempSetPoint	10
+HeaterEnabled	FALSE
+PumpEnabled	FALSE
+DeGasserEnabled	FALSE
+OnTime	1
+OffTime	1
+UseDutyCycleControl	FALSE
+DisableWhenAcquiringData	TRUE
+
+[XY Scan]
+Auto Scale	TRUE
+View Mode	2048
+Selected	0
+View Derated	FALSE
+Scale Mode	dB re Peak
+Use Function Generator	TRUE
+After Scan	GoBack
+Pause	0
+Elapsed Time	00:00:35
+Record Waveforms	FALSE
+Parameter 0	Pulse Intensity Integral
+First Axis	0
+First Points	11
+First Start Position	-5
+First End Position	5
+Second Axis	1
+Second Points	11
+Second Start Position	-5
+Second End Position	5
+Color Scheme	Spectrum
+Altitude	16
+Azimuth	-49
+Keep Aspect Ratio	TRUE
+Integration Limit	26
+Slice First Axis	TRUE
+Slice Index	10
+Perspective	TRUE
+XCount	11
+XMin	-5
+XMax	5
+XIncrement	1
+YCount	11
+YMin	-5
+YMax	5
+YIncrement	1
+ZCount	1
+ZMin	0
+ZMax	0
+ZIncrement	0
+
+[XY Scan Data 0]
+	-5	-4	-3	-2	-1	0	1	2	3	4	5
+-5	1.49051528387746E-6	2.47705147881621E-6	3.93135216668653E-6	5.44598799175417E-6	7.04268743299027E-6	6.51999536809262E-6	4.71293655431692E-6	3.10806690406425E-6	1.99637862683524E-6	1.5528182649207E-6	1.40958082695657E-6
+-4	1.66145299737705E-6	2.67277845212271E-6	4.79649224889935E-6	7.18726509451557E-6	1.03286871259181E-5	9.8946371965817E-6	7.35126833527579E-6	4.41501335498616E-6	2.22738677641288E-6	1.57379582861211E-6	1.03339665200811E-6
+-3	2.33304780077032E-6	5.11698470154572E-6	1.21472513828112E-5	2.19369262266734E-5	3.39053991702031E-5	3.39260012762549E-5	2.18677779353731E-5	1.16950283284827E-5	4.68065207334713E-6	1.84254478512307E-6	1.00399671665506E-6
+-2	3.61656611290318E-6	1.01022520364649E-5	2.58200198964326E-5	5.12361372312531E-5	7.95354355788112E-5	8.11934983121181E-5	5.10998572532301E-5	2.37916375111304E-5	8.58634494944292E-6	2.52906942821723E-6	1.44303417234181E-6
+-1	4.71969897132892E-6	1.47196704953599E-5	4.24137708323509E-5	8.63577864968168E-5	0.000139924812124976	0.00013723483506593	8.54214083776262E-5	3.93679943708553E-5	1.22612372573656E-5	3.13740414704706E-6	1.33294079740275E-6
+0	5.09172873187089E-6	1.69648347382503E-5	4.87321426614176E-5	0.000101957688521089	0.000161673007150288	0.000160866448908651	9.90156358897094E-5	4.46256684138034E-5	1.36716630381574E-5	3.37213552683974E-6	1.57100880446041E-6
+1	4.66982579757462E-6	1.47245688592282E-5	4.19239699712518E-5	8.3125732891968E-5	0.000134159474771457	0.000132881827948098	8.19895298081968E-5	3.79119369034536E-5	1.25257064147298E-5	3.23444706023101E-6	1.41600958124205E-6
+2	3.32597792089986E-6	9.64654467950921E-6	2.56252416676644E-5	5.00384426843432E-5	8.09168884289513E-5	8.01636409927037E-5	5.02317573945553E-5	2.33739565596842E-5	8.59254661803205E-6	2.68449008348056E-6	1.23567776434077E-6
+3	2.08360739773635E-6	5.13720159781043E-6	1.14356727787913E-5	2.09238272744297E-5	3.11319144807241E-5	3.06497126314905E-5	2.0573323287529E-5	1.07259087706009E-5	4.44062527800796E-6	1.98343125920015E-6	1.30458573488835E-6
+4	1.69307363580326E-6	2.67876905639789E-6	4.59241395528391E-6	7.49835299503194E-6	1.14294467298364E-5	1.13297115276384E-5	8.03153349348457E-6	4.61491006750089E-6	2.66303257486526E-6	1.6098404586373E-6	1.06930893147378E-6
+5	1.15833000758417E-6	1.91140956759331E-6	2.8548740143757E-6	5.07467640714348E-6	6.59731038550019E-6	7.24192657219869E-6	5.29272952668514E-6	3.42985778535833E-6	2.04008983716883E-6	1.39004031170936E-6	1.12148012889126E-6
+
+[Calculations]
+Z Distance	125.5
+Temperature	25
+-3 dB Width 1	3.72392581454487
+-3 dB Width 2	3.97318162381396
+-3 dB Area	13
+-6 dB Width 1	5.38537931073754
+-6 dB Width 2	5.66266783957346
+-6 dB Area	24
+-10 dB Width 1	6.9865474103958
+-10 dB Width 2	7.51188667080953
+-10 dB Area	39
+-12 dB Width 1	7.90667225666186
+-12 dB Width 2	8.29314509705197
+-12 dB Area	51
+-13 dB Width 1	8.28707866410507
+-13 dB Width 2	9.36580443580714
+-13 dB Area	56
+Power	0.0117133529116881
+
