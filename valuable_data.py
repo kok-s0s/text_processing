@@ -291,7 +291,7 @@ if __name__ == "__main__":
     # txFreq: list[str] = ["3300", "2000", "5000"]
     # ini_file: str = "AECSoftwareParam_tuzhen.ini"
     # save_name: str = "AEC_tuzhen_947W.json"
-    # for_handle_list("D:/work/text_processing_wok/target_data_csv_947W")
+    # for_handle_list("D:/work/text_processing_work/target_data_csv_947W")
 
     # 微凸探头
     txVoltage: list[str] = [
@@ -312,7 +312,7 @@ if __name__ == "__main__":
     txFreq: list[str] = ["3500", "3840", "4170"]
     ini_file: str = "AECSoftwareParam_weitu.ini"
     save_name: str = "AEC_weitu.json"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv_975S")
+    for_handle_list("D:/work/text_processing_work/target_data_csv_975S")
 
     # 线阵探头
     txVoltage: list[str] = [
@@ -333,7 +333,7 @@ if __name__ == "__main__":
     txFreq: list[str] = ["4500", "5000", "5800"]
     ini_file: str = "AECSoftwareParam_xianzhen.ini"
     save_name: str = "AEC_xianzhen.json"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv_932W")
+    for_handle_list("D:/work/text_processing_work/target_data_csv_932W")
 
     # 相控阵探头
     txVoltage: list[str] = [
@@ -354,7 +354,7 @@ if __name__ == "__main__":
     txFreq: list[str] = ["1600", "2000", "2300"]
     ini_file: str = "AECSoftwareParam_P3CI20.ini"
     save_name: str = "AEC_xiangkongzhen.json"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv_J31W")
+    for_handle_list("D:/work/text_processing_work/target_data_csv_J31W")
 
     # 凸阵探头 942W
     txVoltage: list[str] = [
@@ -375,4 +375,4 @@ if __name__ == "__main__":
     txFreq: list[str] = ["1800", "2000", "2500"]
     ini_file: str = "AECSoftwareParam_C3P60.ini"
     save_name: str = "AEC_tuzhen_942W.json"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv_942W")
+    for_handle_list("D:/work/text_processing_work/target_data_csv_942W")
