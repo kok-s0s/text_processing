@@ -55,13 +55,18 @@ def for_handle_list(cur_dir: str) -> None:
             for freq in txFreq:
                 temp_file_dict: dict[str, float] = {
                     "ZPii3Max": 0.0,
-                    "Zsns": 0.0,
                     "Pd": 0.0,
-                    "Mi": 0.0,
                     "Fc": 0.0,
+                    "Mi": 0.0,
                     "Pii3": 0.0,
                     "BeamWidthX": 0.0,
                     "Power": 0.0,
+                    "P3Zsns": 0.0,
+                    "Ispta3Zsns": 0.0,
+                    "Zsns": 0.0,
+                    "P3Zbns": 0.0,
+                    "Ispta3Zbns": 0.0,
+                    "Zbns": 0.0,
                 }
                 temp_freq_dict.update({freq: temp_file_dict})
             temp_focusRange_dict.update({focusRange: temp_freq_dict})
@@ -78,43 +83,49 @@ def for_handle_list(cur_dir: str) -> None:
 
             for row in cur_one_file_reader:
                 [key, value] = row
-                if key == "ZPii3Max Zsns":
-                    [temp_key_0, temp_key_1] = key.split(" ")
-                    valuable_data_dict[hvcA][focusDepthA][freqB0A][temp_key_0] = float(
-                        value
-                    )
-                    valuable_data_dict[hvcA][focusDepthA][freqB0A][temp_key_1] = float(
-                        value
-                    )
-                else:
-                    valuable_data_dict[hvcA][focusDepthA][freqB0A][key] = float(value)
+                valuable_data_dict[hvcA][focusDepthA][freqB0A][key] = float(value)
 
     ZPii3Max: list[list[list[float]]] = []
-    Zsns: list[list[list[float]]] = []
     Pd: list[list[list[float]]] = []
-    Mi: list[list[list[float]]] = []
     Fc: list[list[list[float]]] = []
+    Mi: list[list[list[float]]] = []
     Pii3: list[list[list[float]]] = []
     BeamWidthX: list[list[list[float]]] = []
     Power: list[list[list[float]]] = []
+    P3Zsns: list[list[list[float]]] = []
+    Ispta3Zsns: list[list[list[float]]] = []
+    Zsns: list[list[list[float]]] = []
+    P3Zbns: list[list[list[float]]] = []
+    Ispta3Zbns: list[list[list[float]]] = []
+    Zbns: list[list[list[float]]] = []
 
     temp_list_list_ZPii3Max: list[list[float]] = []
-    temp_list_list_Zsns: list[list[float]] = []
     temp_list_list_Pd: list[list[float]] = []
-    temp_list_list_Mi: list[list[float]] = []
     temp_list_list_Fc: list[list[float]] = []
+    temp_list_list_Mi: list[list[float]] = []
     temp_list_list_Pii3: list[list[float]] = []
     temp_list_list_BeamWidthX: list[list[float]] = []
     temp_list_list_Power: list[list[float]] = []
+    temp_list_list_P3Zsns: list[list[float]] = []
+    temp_list_list_Ispta3Zsns: list[list[float]] = []
+    temp_list_list_Zsns: list[list[float]] = []
+    temp_list_list_P3Zbns: list[list[float]] = []
+    temp_list_list_Ispta3Zbns: list[list[float]] = []
+    temp_list_list_Zbns: list[list[float]] = []
 
     temp_list_ZPii3Max: list[float] = []
-    temp_list_Zsns: list[float] = []
     temp_list_Pd: list[float] = []
-    temp_list_Mi: list[float] = []
     temp_list_Fc: list[float] = []
+    temp_list_Mi: list[float] = []
     temp_list_Pii3: list[float] = []
     temp_list_BeamWidthX: list[float] = []
     temp_list_Power: list[float] = []
+    temp_list_P3Zsns: list[float] = []
+    temp_list_Ispta3Zsns: list[float] = []
+    temp_list_Zsns: list[float] = []
+    temp_list_P3Zbns: list[float] = []
+    temp_list_Ispta3Zbns: list[float] = []
+    temp_list_Zbns: list[float] = []
 
     for voltage in valuable_data_dict:  # 12
         for focus_range in valuable_data_dict[voltage]:  # 8
@@ -125,20 +136,16 @@ def for_handle_list(cur_dir: str) -> None:
                         temp_list_ZPii3Max.append(
                             valuable_data_dict[voltage][focus_range][freq][item]
                         )
-                    elif item == "Zsns":
-                        temp_list_Zsns.append(
-                            valuable_data_dict[voltage][focus_range][freq][item]
-                        )
                     elif item == "Pd":
                         temp_list_Pd.append(
                             valuable_data_dict[voltage][focus_range][freq][item]
                         )
-                    elif item == "Mi":
-                        temp_list_Mi.append(
-                            valuable_data_dict[voltage][focus_range][freq][item]
-                        )
                     elif item == "Fc":
                         temp_list_Fc.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "Mi":
+                        temp_list_Mi.append(
                             valuable_data_dict[voltage][focus_range][freq][item]
                         )
                     elif item == "Pii3":
@@ -153,40 +160,84 @@ def for_handle_list(cur_dir: str) -> None:
                         temp_list_Power.append(
                             valuable_data_dict[voltage][focus_range][freq][item]
                         )
+                    elif item == "P3Zsns":
+                        temp_list_P3Zsns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "Ispta3Zsns":
+                        temp_list_Ispta3Zsns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "Zsns":
+                        temp_list_Zsns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "P3Zbns":
+                        temp_list_P3Zbns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "Ispta3Zbns":
+                        temp_list_Ispta3Zbns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
+                    elif item == "Zbns":
+                        temp_list_Zbns.append(
+                            valuable_data_dict[voltage][focus_range][freq][item]
+                        )
 
             temp_list_list_ZPii3Max.append(temp_list_ZPii3Max)
-            temp_list_list_Zsns.append(temp_list_Zsns)
             temp_list_list_Pd.append(temp_list_Pd)
-            temp_list_list_Mi.append(temp_list_Mi)
             temp_list_list_Fc.append(temp_list_Fc)
+            temp_list_list_Mi.append(temp_list_Mi)
             temp_list_list_Pii3.append(temp_list_Pii3)
             temp_list_list_BeamWidthX.append(temp_list_BeamWidthX)
             temp_list_list_Power.append(temp_list_Power)
+            temp_list_list_P3Zsns.append(temp_list_P3Zsns)
+            temp_list_list_Ispta3Zsns.append(temp_list_Ispta3Zsns)
+            temp_list_list_Zsns.append(temp_list_Zsns)
+            temp_list_list_P3Zbns.append(temp_list_P3Zbns)
+            temp_list_list_Ispta3Zbns.append(temp_list_Ispta3Zbns)
+            temp_list_list_Zbns.append(temp_list_Zbns)
             temp_list_ZPii3Max = []
-            temp_list_Zsns = []
             temp_list_Pd = []
-            temp_list_Mi = []
             temp_list_Fc = []
+            temp_list_Mi = []
             temp_list_Pii3 = []
             temp_list_BeamWidthX = []
             temp_list_Power = []
+            temp_list_P3Zsns = []
+            temp_list_Ispta3Zsns = []
+            temp_list_Zsns = []
+            temp_list_P3Zbns = []
+            temp_list_Ispta3Zbns = []
+            temp_list_Zbns = []
 
         ZPii3Max.append(temp_list_list_ZPii3Max)
-        Zsns.append(temp_list_list_Zsns)
         Pd.append(temp_list_list_Pd)
-        Mi.append(temp_list_list_Mi)
         Fc.append(temp_list_list_Fc)
+        Mi.append(temp_list_list_Mi)
         Pii3.append(temp_list_list_Pii3)
         BeamWidthX.append(temp_list_list_BeamWidthX)
         Power.append(temp_list_list_Power)
+        P3Zsns.append(temp_list_list_P3Zsns)
+        Ispta3Zsns.append(temp_list_list_Ispta3Zsns)
+        Zsns.append(temp_list_list_Zsns)
+        P3Zbns.append(temp_list_list_P3Zbns)
+        Ispta3Zbns.append(temp_list_list_Ispta3Zbns)
+        Zbns.append(temp_list_list_Zbns)
         temp_list_list_ZPii3Max = []
-        temp_list_list_Zsns = []
         temp_list_list_Pd = []
-        temp_list_list_Mi = []
         temp_list_list_Fc = []
+        temp_list_list_Mi = []
         temp_list_list_Pii3 = []
         temp_list_list_BeamWidthX = []
         temp_list_list_Power = []
+        temp_list_list_P3Zsns = []
+        temp_list_list_Ispta3Zsns = []
+        temp_list_list_Zsns = []
+        temp_list_list_P3Zbns = []
+        temp_list_list_Ispta3Zbns = []
+        temp_list_list_Zbns = []
 
     with open(save_name, "w+") as jsonFile:
         jsonFile.write(
@@ -201,13 +252,18 @@ def for_handle_list(cur_dir: str) -> None:
                     "TxFreq": TxFreq,
                     "TxPulseTypeA": TxPulseTypeA,
                     "ZPii3Max": ZPii3Max,
-                    "Zsns": Zsns,
                     "Pd": Pd,
-                    "Mi": Mi,
                     "Fc": Fc,
+                    "Mi": Mi,
                     "Pii3": Pii3,
                     "BeamWidthX": BeamWidthX,
                     "Power": Power,
+                    "P3Zsns": P3Zsns,
+                    "Ispta3Zsns": Ispta3Zsns,
+                    "Zsns": Zsns,
+                    "P3Zbns": P3Zbns,
+                    "Ispta3Zbns": Ispta3Zbns,
+                    "Zbns": Zbns,
                     # "valuable_data": valuable_data_dict,
                 },
                 indent=4,
@@ -217,25 +273,25 @@ def for_handle_list(cur_dir: str) -> None:
 
 if __name__ == "__main__":
     # 凸阵探头 947W 废弃
-    txVoltage: list[str] = [
-        "013",
-        "048",
-        "081",
-        "114",
-        "141",
-        "163",
-        "178",
-        "196",
-        "214",
-        "227",
-        "242",
-        "255",
-    ]
-    txFocusRange: list[str] = ["020", "040", "060", "080", "110", "140", "180", "230"]
-    txFreq: list[str] = ["3300", "2000", "5000"]
-    ini_file: str = "AECSoftwareParam_tuzhen.ini"
-    save_name: str = "AEC_tuzhen_947W.json"
-    for_handle_list("D:/work/text_processing_wok/target_data_csv_947W")
+    # txVoltage: list[str] = [
+    #     "013",
+    #     "048",
+    #     "081",
+    #     "114",
+    #     "141",
+    #     "163",
+    #     "178",
+    #     "196",
+    #     "214",
+    #     "227",
+    #     "242",
+    #     "255",
+    # ]
+    # txFocusRange: list[str] = ["020", "040", "060", "080", "110", "140", "180", "230"]
+    # txFreq: list[str] = ["3300", "2000", "5000"]
+    # ini_file: str = "AECSoftwareParam_tuzhen.ini"
+    # save_name: str = "AEC_tuzhen_947W.json"
+    # for_handle_list("D:/work/text_processing_wok/target_data_csv_947W")
 
     # 微凸探头
     txVoltage: list[str] = [
