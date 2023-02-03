@@ -329,6 +329,7 @@ if __name__ == "__main__":
         "242",
         "255",
     ]
+    # TODO 还需要再加一组数据
     txFocusRange: list[str] = ["010", "016", "025", "035", "045", "060", "080"]
     txFreq: list[str] = ["4500", "5000", "5800"]
     ini_file: str = "AECSoftwareParam_xianzhen.ini"
